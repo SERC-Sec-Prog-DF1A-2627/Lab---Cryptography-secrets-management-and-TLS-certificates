@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<p>Sign in with the temporary code from your Codespace terminal.</p>
+{% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+<form method="post">
+  <input type="hidden" name="csrf" value="{{ session.csrf }}">
+  <label>Staff member <select name="staff">{% for name in staff_names %}<option>{{ name }}</option>{% endfor %}</select></label>
+  <label>Temporary code <input type="password" name="code" required autocomplete="off"></label>
+  <button>Sign in</button>
+</form>
+{% endblock %}

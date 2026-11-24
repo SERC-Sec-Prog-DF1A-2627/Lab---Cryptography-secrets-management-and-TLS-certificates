@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<p>Signed in as <strong>{{ owner }}</strong></p>
+<form method="post">
+  <input type="hidden" name="csrf" value="{{ session.csrf }}">
+  <label>Fictional note (up to 500 characters)<textarea name="body" maxlength="500" required></textarea></label>
+  <button>Save note</button>
+</form>
+<h2>Your notes</h2>
+<ul>
+{% for note_id, text in notes %}
+  <li>Note {{ note_id }} &mdash; {{ text }}</li>
+{% else %}
+  <li>You have no notes yet.</li>
+{% endfor %}
+</ul>
+<form method="post" action="{{ url_for('logout') }}">
+  <input type="hidden" name="csrf" value="{{ session.csrf }}"><button>Sign out</button>
+</form>
+{% endblock %}

@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+instance/
+.dev-tls/
+.dev-tls-backup-*/
+*.key
+*.sqlite3*
