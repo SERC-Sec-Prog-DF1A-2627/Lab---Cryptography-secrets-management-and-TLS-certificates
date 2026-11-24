@@ -1,4 +1,6 @@
-# College Secure Notes
+# Lab - Cryptography, Secrets MManagement and TLS Certificates
+
+This lab explores encrypting and securely storing notes, managing secrets outside source code, and validating HTTPS server certificates.
 
 **Week 10 · Block 1 · 120 minutes · Level 6 secure programming**
 
